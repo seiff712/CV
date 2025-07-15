@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV with Skill Bars & Dark Mode</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📝 Side-by-Side CV</h1>
+      <button id="toggleMode" class="toggle-btn">🌙 Dark Mode</button>
+    </div>
+
+    <form id="cvForm">
+      <label>Full Name:</label>
+      <input type="text" id="name" required />
+
+      <label>Title:</label>
+      <input type="text" id="title" required />
+
+      <label>Email:</label>
+      <input type="email" id="email" required />
+
+      <label>Phone:</label>
+      <input type="text" id="phone" required />
+
+      <label>Skills (e.g. HTML:90, CSS:80):</label>
+      <input type="text" id="skills" placeholder="HTML:90, CSS:80" />
+
+      <label>Experience:</label>
+      <textarea id="experience"></textarea>
+
+      <label>Education:</label>
+      <textarea id="education"></textarea>
+
+      <label>Upload Profile Image:</label>
+      <input type="file" id="profilePic" accept="image/*" />
+
+      <button type="submit">📄 Generate CV</button>
+    </form>
+
+    <hr />
+
+    <div id="cvDisplay" class="cv-box hidden">
+      <div class="left">
+        <img id="cvImage" src="" class="profile-image" alt="Profile" />
+        <h1 id="cvName">Your Name</h1>
+        <p class="title" id="cvTitle">Title</p>
+        <p class="email" id="cvEmail">📧 Email</p>
+        <p class="phone" id="cvPhone">📞 Phone</p>
+      </div>
+      <div class="right">
+        <h2>Experience</h2>
+        <div class="section" id="cvExperience"></div>
+
+        <h2>Education</h2>
+        <div class="section" id="cvEducation"></div>
+
+        <h2>Skills</h2>
+        <ul id="cvSkills" class="skills-list"></ul>
+
+        <div class="download-container">
+          <button onclick="window.print()" class="download-btn">⬇️ Download as PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

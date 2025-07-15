@@ -1,0 +1,149 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s, color 0.3s;
+}
+body.dark {
+  background-color: #121212;
+  color: #eaeaea;
+}
+.container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toggle-btn {
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+body.dark form {
+  background-color: #1e1e1e;
+}
+form label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+}
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+body.dark input, body.dark textarea {
+  background-color: #2e2e2e;
+  color: white;
+  border: 1px solid #555;
+}
+form input[type="file"] {
+  margin-top: 10px;
+}
+form button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.cv-box {
+  display: flex;
+  flex-direction: row;
+  margin-top: 40px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+body.dark .cv-box {
+  background-color: #1e1e1e;
+}
+.left, .right {
+  width: 50%;
+  padding: 30px 20px;
+}
+.left {
+  background-color: #0077cc;
+  color: white;
+  text-align: center;
+}
+.right h2 {
+  border-bottom: 2px solid #0077cc;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+.skills-list {
+  list-style: none;
+  padding-left: 0;
+}
+.skills-list li {
+  margin-bottom: 10px;
+}
+.skill-bar {
+  background-color: #ddd;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 20px;
+  background-color: #0077cc;
+  color: white;
+  padding-left: 10px;
+  line-height: 20px;
+  border-radius: 25px 0 0 25px;
+  transition: width 0.8s ease-in-out;
+}
+body.dark .skill-bar {
+  background-color: #444;
+}
+body.dark .skill-bar-fill {
+  background-color: #00aaff;
+}
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.download-container {
+  margin-top: 20px;
+  text-align: center;
+}
+.download-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
