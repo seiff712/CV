@@ -1,149 +1,634 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  transition: background 0.3s, color 0.3s;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-body.dark {
-  background-color: #121212;
-  color: #eaeaea;
+
+body{
+    overflow:hidden;
+    background:#000;
+    font-family:Arial, Helvetica, sans-serif;
 }
-.container {
-  max-width: 1000px;
-  margin: 20px auto;
-  padding: 20px;
+
+/* =======================
+   Stars
+======================= */
+
+#stars{
+    position:fixed;
+    inset:0;
 }
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
+/* =======================
+   Loading
+======================= */
+
+#loading{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    z-index:100;
+
+    transition:1s;
 }
-.toggle-btn {
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
-  cursor: pointer;
+
+.title{
+
+    color:white;
+    font-size:60px;
+
+    animation:glow 2s infinite;
+
 }
-form {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+.click{
+
+    color:#ddd;
+
+    margin-top:30px;
+
+    font-size:22px;
+
+    animation:blink 1s infinite;
+
 }
-body.dark form {
-  background-color: #1e1e1e;
+
+/* =======================
+   Intro
+======================= */
+
+#intro{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+
+    transition:1s;
+
+    z-index:50;
+
 }
-form label {
-  display: block;
-  margin-top: 15px;
-  font-weight: 600;
+
+#typing{
+
+    color:white;
+
+    width:80%;
+
+    text-align:center;
+
+    font-size:55px;
+
+    text-shadow:
+    0 0 20px hotpink,
+    0 0 40px deeppink;
+
 }
-form input[type="text"],
-form input[type="email"],
-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+
+/* =======================
+   Cursor
+======================= */
+
+.cursor{
+
+    width:25px;
+    height:25px;
+
+    border-radius:50%;
+
+    background:white;
+
+    filter:blur(10px);
+
+    opacity:.6;
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:999;
+
 }
-body.dark input, body.dark textarea {
-  background-color: #2e2e2e;
-  color: white;
-  border: 1px solid #555;
+
+/* =======================
+   Heart Scene
+======================= */
+
+#heartScene{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.75);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:1s;
+
+    z-index:200;
+
 }
-form input[type="file"] {
-  margin-top: 10px;
+
+#bigHeart{
+
+    width:280px;
+
+    transform:scale(0);
+
+    transition:1s;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    filter:
+
+    drop-shadow(0 0 30px #ff0055)
+    drop-shadow(0 0 70px #ff0088)
+    drop-shadow(0 0 120px #ff66aa);
+
 }
-form button {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background: #0077cc;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 16px;
+
+.beat{
+
+    animation:heartBeat .8s infinite;
+
 }
-.cv-box {
-  display: flex;
-  flex-direction: row;
-  margin-top: 40px;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+.explode{
+
+    animation:explode 1s forwards;
+
 }
-body.dark .cv-box {
-  background-color: #1e1e1e;
+
+/* =======================
+   Animations
+======================= */
+
+@keyframes blink{
+
+    50%{
+
+        opacity:.3;
+
+    }
+
 }
-.left, .right {
-  width: 50%;
-  padding: 30px 20px;
+
+@keyframes glow{
+
+    0%{
+
+        text-shadow:0 0 10px hotpink;
+
+    }
+
+    50%{
+
+        text-shadow:
+        0 0 30px deeppink,
+        0 0 60px hotpink;
+
+    }
+
+    100%{
+
+        text-shadow:0 0 10px hotpink;
+
+    }
+
 }
-.left {
-  background-color: #0077cc;
-  color: white;
-  text-align: center;
+
+@keyframes heartBeat{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    25%{
+
+        transform:scale(1.12);
+
+    }
+
+    50%{
+
+        transform:scale(.95);
+
+    }
+
+    75%{
+
+        transform:scale(1.15);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
 }
-.right h2 {
-  border-bottom: 2px solid #0077cc;
-  padding-bottom: 6px;
-  margin-top: 0;
+
+@keyframes explode{
+
+    100%{
+
+        transform:scale(8);
+
+        opacity:0;
+
+        filter:blur(25px);
+
+    }
+
 }
-.skills-list {
-  list-style: none;
-  padding-left: 0;
+
+
+/*========================
+Gallery
+========================*/
+
+#gallery{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+pointer-events:none;
+
+z-index:500;
+
 }
-.skills-list li {
-  margin-bottom: 10px;
+
+.photo{
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:25px;
+
+border:5px solid white;
+
+opacity:0;
+
+transform:scale(.2) rotate(-180deg);
+
+transition:1s;
+
+box-shadow:
+
+0 0 25px hotpink,
+
+0 0 60px crimson;
+
 }
-.skill-bar {
-  background-color: #ddd;
-  border-radius: 25px;
-  overflow: hidden;
+
+
+/*=============================
+Photo Explosion
+=============================*/
+
+#photoContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:300;
+
 }
-.skill-bar-fill {
-  height: 20px;
-  background-color: #0077cc;
-  color: white;
-  padding-left: 10px;
-  line-height: 20px;
-  border-radius: 25px 0 0 25px;
-  transition: width 0.8s ease-in-out;
+
+.memory{
+
+    position:absolute;
+
+    width: clamp(55px,5vw,90px);
+    height: clamp(55px,5vw,90px);
+
+    min-width:55px;
+    min-height:55px;
+
+    max-width:90px;
+    max-height:90px;
+
+    
+    object-fit:cover;
+    border-radius:15px;
+
+    border:6px solid white;
+
+    box-shadow:
+
+    0 0 30px hotpink,
+
+    0 0 70px crimson;
+
+    opacity:0;
+
+    transform:
+
+    translate(-50%,-50%)
+
+    scale(.15)
+
+    rotate(-360deg);
+
+    transition:
+    1.4s cubic-bezier(.18,1.25,.35,1);
+
 }
-body.dark .skill-bar {
-  background-color: #444;
+
+.memory:hover{
+
+    transform:
+    translate(-50%,-50%)
+    scale(1.08)
+    rotate(0deg);
+
+    z-index:999;
+
+    box-shadow:
+    0 0 35px hotpink,
+    0 0 90px crimson;
+
 }
-body.dark .skill-bar-fill {
-  background-color: #00aaff;
+
+#finalText{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:55px;
+
+    color:white;
+
+    text-shadow:
+    0 0 20px hotpink,
+    0 0 60px crimson;
+
+    opacity:0;
+
+    transition:2s;
+
+    z-index:900;
+
+    pointer-events:none;
+
 }
-.profile-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+@media (max-width:768px){
+
+    #bigHeart{
+        width:180px;
+    }
+
+    #finalText{
+        font-size:30px;
+        text-align:center;
+        padding:20px;
+    }
+
+    .memory{
+        border-radius:10px;
+    }
+
 }
-.download-container {
-  margin-top: 20px;
-  text-align: center;
+
+/*==========================
+Memory Scene
+==========================*/
+
+#memoryScene{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    z-index:800;
+
 }
-.download-btn {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
+
+.memoryMessage{
+    width:min(90vw,700px);
+    max-height:80vh;
+    overflow-y:auto;
+
+    padding:30px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:25px;
+
+    color:#fff;
+    text-align:center;
+
+    box-shadow:
+    0 0 25px hotpink,
+    0 0 70px deeppink;
 }
-.hidden {
-  display: none;
+
+.memoryMessage h1{
+    font-size:clamp(24px,4vw,46px);
+    margin-bottom:20px;
+}
+
+.memoryMessage p{
+    font-size:clamp(15px,2vw,22px);
+    line-height:1.8;
+    white-space:normal;
+}
+
+@media(max-width:768px){
+
+    .memoryMessage{
+
+        width:92vw;
+        padding:20px;
+        max-height:75vh;
+    }
+
+    .memoryMessage h1{
+
+        font-size:26px;
+
+    }
+
+    .memoryMessage p{
+
+        font-size:16px;
+
+    }
+
+}
+.sidePhoto{
+
+    position:absolute;
+
+    width:clamp(70px,8vw,170px);
+
+    aspect-ratio:1;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    border:4px solid white;
+
+    box-shadow:
+
+    0 0 25px hotpink,
+
+    0 0 60px crimson;
+
+    animation:
+
+    pop .8s ease forwards,
+
+    breathing 4s ease-in-out infinite;
+
+    opacity:0;
+
+}
+
+@keyframes pop{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.2) rotate(-20deg);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1) rotate(0deg);
+
+    }
+
+}
+
+@keyframes breathing{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+#nextBtn{
+
+    position:fixed;
+
+    bottom:40px;
+    right:40px;
+
+    padding:16px 35px;
+
+    border:none;
+    border-radius:50px;
+
+    background:linear-gradient(45deg,#ff0080,#ff4d6d);
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 20px hotpink,
+        0 0 50px crimson;
+
+    display:none;
+
+    z-index:9999;
+
+    transition:.3s;
+}
+
+#nextBtn:hover{
+
+    transform:scale(1.08);
+
 }
