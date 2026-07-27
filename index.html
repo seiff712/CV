@@ -1,73 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CV with Skill Bars & Dark Mode</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Love ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-      <h1>📝 Side-by-Side CV</h1>
-      <button id="toggleMode" class="toggle-btn">🌙 Dark Mode</button>
+
+<div id="loading">
+
+<h1 class="title">❤️ For Someone Special ❤️</h1>
+
+<p class="click">Click Anywhere To Begin</p>
+
+</div>
+
+<canvas id="stars"></canvas>
+
+<div id="intro">
+
+<h1 id="typing"></h1>
+
+</div>
+
+<div id="heartScene">
+
+<img src="heart.png" id="bigHeart">
+
+</div>
+
+<div id="gallery">
+
+<img src="1.jpg" class="photo">
+<img src="2.jpg" class="photo">
+<img src="3.jpg" class="photo">
+<img src="4.jpg" class="photo">
+<img src="5.jpg" class="photo">
+<img src="6.jpg" class="photo">
+<img src="7.jpg" class="photo">
+<img src="8.jpg" class="photo">
+<img src="9.jpg" class="photo">
+<img src="10.jpg" class="photo">
+<img src="11.jpg" class="photo">
+<img src="12.jpg" class="photo">
+<img src="13.jpg" class="photo">
+<img src="14.jpg" class="photo">
+<img src="15.jpg" class="photo">
+
+</div>
+
+<div id="photoContainer"></div>
+
+<div class="cursor"></div>
+
+<div id="memoryScene">
+
+    <div class="memoryMessage">
+        <h1>WA3D A5RY HYB2A MSH FADYYY💕</h1>
+
+        <p>
+            Entii a7la w agmal 7aga f donyety<br>
+            Entii 3wad rabena lya <br>
+            lama olty ana bahbkk <br>w oltlk wna kman ana kan nefsy a5dk f7odny 7odn kbir awy awy awy awy <br>bs kont mstany ataked enti oltiha bgd<br> wla 34an bs gambk w el7gat dy w mnmtsh b3dha youmen mn kotr ma bfkar f kol 7aga mn awl elyoum da le ba2yet 3omrna<br> w el7 mnha alf 7aga 7salet ana ba7md rabena 3leky kol youm million mara yso8nan ya amar entaa <br>enhrda da a7la youm bnsbaly <br><br>
+
+            3omry ma h2dar abtal a7bk ❤️
+        </p>
     </div>
 
-    <form id="cvForm">
-      <label>Full Name:</label>
-      <input type="text" id="name" required />
+</div>
 
-      <label>Title:</label>
-      <input type="text" id="title" required />
+<button id="nextBtn">Continue ❤️</button>>
 
-      <label>Email:</label>
-      <input type="email" id="email" required />
+<audio id="bgMusic" loop>
+    <source src="./assets/music.mp3" type="audio/mpeg">
+</audio>
 
-      <label>Phone:</label>
-      <input type="text" id="phone" required />
+<script src="script.js"></script>
 
-      <label>Skills (e.g. HTML:90, CSS:80):</label>
-      <input type="text" id="skills" placeholder="HTML:90, CSS:80" />
+ 
 
-      <label>Experience:</label>
-      <textarea id="experience"></textarea>
+<script>
+document.getElementById("nextScene").onclick=()=>{
 
-      <label>Education:</label>
-      <textarea id="education"></textarea>
+    window.location.href="../chapter2/index.html";
 
-      <label>Upload Profile Image:</label>
-      <input type="file" id="profilePic" accept="image/*" />
+}
+</script>
 
-      <button type="submit">📄 Generate CV</button>
-    </form>
-
-    <hr />
-
-    <div id="cvDisplay" class="cv-box hidden">
-      <div class="left">
-        <img id="cvImage" src="" class="profile-image" alt="Profile" />
-        <h1 id="cvName">Your Name</h1>
-        <p class="title" id="cvTitle">Title</p>
-        <p class="email" id="cvEmail">📧 Email</p>
-        <p class="phone" id="cvPhone">📞 Phone</p>
-      </div>
-      <div class="right">
-        <h2>Experience</h2>
-        <div class="section" id="cvExperience"></div>
-
-        <h2>Education</h2>
-        <div class="section" id="cvEducation"></div>
-
-        <h2>Skills</h2>
-        <ul id="cvSkills" class="skills-list"></ul>
-
-        <div class="download-container">
-          <button onclick="window.print()" class="download-btn">⬇️ Download as PDF</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
 </body>
+
 </html>
